@@ -1,0 +1,183 @@
+@startuml
+     package "Before Modification" {
+         left to right direction
+
+         object "<u>testDocument: Document</u>" as td{
+             characters = [
+                 character0: Character,
+                 character1: Character,
+                 character2: Character,
+                 character3: Character,
+                 character4: Character,
+                 character5: Character,
+                 character6: Character,
+                 character7: Character,
+                 character8: Character,
+                 character9: Character,
+                 character10: Character,
+                 character11: Character,
+                 character12: Character,
+                 character13: Character,
+                 character14: Character,
+                 character15: Character
+             ]
+             propertiesFactory = cpf: CharacterPropertiesFactory
+         }
+
+         object "<u>character0: Character</u>" as c0{
+             character = 'H'
+             characterProperty = cp1: CharacterProperties
+         }
+
+         object "<u>character1: Character</u>" as c1{
+             character = 'e'
+             characterProperty = cp2: CharacterProperties
+         }
+
+         object "<u>character2: Character</u>" as c2{
+             character = 'l'
+             characterProperty = cp2: CharacterProperties
+         }
+
+         object "<u>character3: Character</u>" as c3{
+             character = 'l'
+             characterProperty = cp2: CharacterProperties
+         }
+
+         object "<u>character4: Character</u>" as c4{
+             character = 'o'
+             characterProperty = cp2: CharacterProperties
+         }
+
+         object "<u>character5: Character</u>" as c5{
+             character = 'W'
+             characterProperty = cp1: CharacterProperties
+         }
+
+         object "<u>character6: Character</u>" as c6{
+             character = 'o'
+             characterProperty = cp2: CharacterProperties
+         }
+
+         object "<u>character7: Character</u>" as c7{
+             character = 'r'
+             characterProperty = cp2: CharacterProperties
+         }
+
+         object "<u>character8: Character</u>" as c8{
+             character = 'l'
+             characterProperty = cp2: CharacterProperties
+         }
+
+         object "<u>character9: Character</u>" as c9{
+             character = 'd'
+             characterProperty = cp2: CharacterProperties
+         }
+
+         object "<u>character10: Character</u>" as c10{
+             character = 'C'
+             characterProperty = cp3: CharacterProperties
+         }
+
+         object "<u>character11: Character</u>" as c11{
+             character = 'S'
+             characterProperty = cp3: CharacterProperties
+         }
+
+         object "<u>character12: Character</u>" as c12{
+             character = '5'
+             characterProperty = cp4: CharacterProperties
+         }
+
+         object "<u>character13: Character</u>" as c13{
+             character = '8'
+             characterProperty = cp4: CharacterProperties
+         }
+
+         object "<u>character14: Character</u>" as c14{
+             character = '0'
+             characterProperty = cp4: CharacterProperties
+         }
+
+         object "<u>character15: Character</u>" as c15{
+             character = '0'
+             characterProperty = cp4: CharacterProperties
+         }
+
+         object "<u>cp1: CharacterProperties</u>" as cp1{
+             font = "Arial"
+             color = "Black"
+             size = 16
+         }
+
+         object "<u>cp2: CharacterProperties</u>" as cp2{
+             font = "Arial"
+             color = "Black"
+             size = 14
+         }
+
+         object "<u>cp3: CharacterProperties</u>" as cp3{
+             font = "Verdana"
+             color = "Blue"
+             size = 18
+         }
+
+         object "<u>cp4: CharacterProperties</u>" as cp4{
+             font = "Verdana"
+             color = "Red"
+             size = 12
+         }
+
+         object "<u>cpf: CharacterPropertiesFactory</u>" as cpf {
+                flyweights = [
+                    "Arial16Black": cp1: CharacterProperties,
+                    "Arial14Black": cp2: CharacterProperties,
+                    "Verdana18Blue": cp3: CharacterProperties,
+                    "Verdana12Red": cp4: CharacterProperties
+                ]
+         }
+     }
+
+     td *-- c0
+     td *-- c1
+     td *-- c2
+     td *-- c3
+     td *-- c4
+     td *-- c5
+     td *-- c6
+     td *-- c7
+     td *-- c8
+     td *-- c9
+     td *-- c10
+     td *-- c11
+     td *-- c12
+     td *-- c13
+     td *-- c14
+     td *-- c15
+     td *-- cpf
+
+     c0 o-- cp1
+     c1 o-- cp2
+     c2 o-- cp2
+     c3 o-- cp2
+     c4 o-- cp2
+     c5 o-- cp1
+     c6 o-- cp2
+     c7 o-- cp2
+     c8 o-- cp2
+     c9 o-- cp2
+     c10 o-- cp3
+     c11 o-- cp3
+     c12 o-- cp4
+     c13 o-- cp4
+     c14 o-- cp4
+     c15 o-- cp4
+
+     cpf *-- cp1
+     cpf *-- cp2
+     cpf *-- cp3
+     cpf *-- cp4
+@enduml
+
+
+
